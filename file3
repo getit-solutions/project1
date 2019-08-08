@@ -1,0 +1,8 @@
+ checkout otherbranch
+    git checkout -b temp-merge-other
+       git merge currentbranch -s ours
+          git checkout currentbranch
+	     git merge temp-merge-other --no-ff
+	        git diff otherbranch      # no difference
+		   git log           # commit history from dev is included
+		      git branch -D temp-merge-other
